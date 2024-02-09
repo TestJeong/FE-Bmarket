@@ -1,3 +1,109 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "eslint-plugin-import", "prettier", "check-file"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  // "airbnb": "airbnb/hooks",
+  "extends": ["airbnb", "airbnb/hooks", "plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "project": ["tsconfig.json"],
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelAttributes": ["htmlFor"]
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "components/!({_,[,4})/*.{jsx,tsx}": "PASCAL_CASE",
+        "pages/**/!({_,[,4,5}).{jsx,tsx}": "SNAKE_CASE",
+        "**/*.{js,ts}": "CAMEL_CASE"
+      },
+      {"ignoreMiddleExtensions": true}
+    ],
+    "react/no-unknown-property": [
+      2,
+      {
+        "ignore": ["jsx"]
+      }
+    ],
+    // '__+([a-z])'
+    "import/no-unresolved": "off",
+    // "object-shorthand": [ "always", { "avoidQuotes": true }],
+    "prefer-const": 0,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-interface": ["error", {"allowSingleExtends": true}],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["warn"],
+    "react/jsx-filename-extension": ["warn", {"extensions": [".jsx", ".tsx"]}],
+    "react/prop-types": "off",
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": 0,
+    "@typescript-eslint/ban-ts-comment": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    // props 부분에서 스프레드 연산자 사용시 에러
+    "react/jsx-props-no-spreading": [1, {"custom": "ignore"}],
+    // package.json에 없는 라이브러리 호출세 에러
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": true,
+        "peerDependencies": true
+      }
+    ],
+    "react/require-default-props": "off", // 타입선언시 선택적 프로퍼티를 사용할때 에러발생
+    "no-param-reassign": ["error", {"props": false}], // 함수 매게 변수의 수정 또는 재할당할경우 에러발생(redux)
+    "no-use-before-define": "off", //  컴포넌트, 함수가 정의되기전에 사용할 경우 에러발생
+    "import/extensions": "off", // export시 export default 로 내보내지 않으면 에러가 발생
+    "import/prefer-default-export": "off", // export시 export default 로 내보내지 않으면 에러가 발생
+    "camelcase": "off" // 카멜케이스 off
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

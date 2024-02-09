@@ -14,10 +14,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "declaration": true,
+    // "declaration": true,
     "incremental": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
     "plugins": [
       {
         "name": "next"
@@ -31,16 +31,9 @@
       "components/*": ["components/*"],
       "store/*": ["lib/store/*"],
       "utils/*": ["lib/utils/*"],
-      "lib/*": ["lib/*"],
-      "@/*": ["src/*"]
+      "lib/*": ["lib/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "lib/type/auth.d.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/type/auth.d.ts"],
   "exclude": ["node_modules"]
 }
