@@ -5,13 +5,13 @@ import MainHome from "./home/page"
 
 export default function Home() {
   return (
-    <main className="max-w-[30rem] h-full mb-8 relative bg-white my-0 mx-auto border border-black">
+    <main className="max-w-[30rem] h-full mb-8 bg-white  border border-black">
       <div className=" h-full border-1 flex items-center justify-center flex-col ">
         <header className="w-full">
           <Header />
         </header>
 
-        <section className="mt-[5rem]">
+        <section className="mt-[5rem] w-full">
           <MainHome />
         </section>
 

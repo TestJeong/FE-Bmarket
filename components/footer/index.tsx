@@ -1,3 +1,5 @@
+import {Swiper} from "swiper/react"
+
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 w-full max-w-[30rem] shadow-[0_3px_10px_rgb(0,0,0,0.2)] rounded-t-2xl px-4 py-7 bg-white">
